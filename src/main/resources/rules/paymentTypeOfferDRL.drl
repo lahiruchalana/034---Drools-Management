@@ -1,0 +1,17 @@
+package KieRule;
+import com.lc.chanakye.myprojectsdroolsbusinessrulesmanagementsystem.entity.PaymentTypeOffer;
+
+
+rule "Offer for LankaPay"
+    when
+        offerObject: PaymentTypeOffer(paymentMethod=="lankapay")
+    then
+        offerObject.setOffer(22);
+    end
+
+rule "Offer for SampathPay"
+    when
+        offerObject: PaymentTypeOffer(paymentMethod=="sampathpay")
+    then
+        offerObject.setOffer(12);
+    end
